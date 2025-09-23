@@ -15,6 +15,7 @@ code homework-1-404-not-found # I like opening VS Code from terminal
 Then to setup environment and get it running
 ```bash
 pipenv shell
+brew install python@3.10
 pipenv install
 flask --app server.py run
 ```
@@ -35,3 +36,10 @@ pipenv install gunicorn
 gunicorn server:app
 ```
 
+Website is deployed at https://arun-interactive-web-session-6.onrender.com/
+
+For loading the .env files I used
+
+```bash
+pipenv run python
+```
