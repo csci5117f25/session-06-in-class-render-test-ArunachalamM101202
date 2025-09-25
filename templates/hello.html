@@ -14,5 +14,40 @@
 {% if name %}
 <h2>and hello to {{name}}</h2>
 {% endif %}
+
+<form method="post" action="/guestbook">
+    <input type="text" name="name" placeholder="Enter your name">
+    <input type="text" name="message" placeholder="Enter your message">
+    <button type="submit">Submit</button>
+</form>
+
+<br>
+<a href="/getmessages">
+    <button type="button">Get Messages</button>
+</a>
+
 </body>
+
+
+</body>
+
+{% if name %}
+<h1>Data Submitted</h1>
+<ul>
+    <li>{{name}}</li>
+    <li>{{message}}</li>
+</ul>
+{% endif %}
+
+
+
+{% if messages %}
+<h1>Guestbook Messages (so far from Postgresql)</h1>
+<ul>
+    {% for msg in messages %}
+    <li>{{msg.name}} - {{msg.message}}</li>
+    {% endfor %}   
+    </ul>
+{% endif %}
+
 </html>
